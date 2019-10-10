@@ -17,7 +17,7 @@ namespace FightSimv2
         public int Attack()
         {
             Random generator = new Random();
-            int amount = generator.Next(15, 30);
+            int amount = generator.Next(10, 31);
             return amount;
         }
         //drar bort amount från fighters hp
