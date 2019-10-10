@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace FightSimv2
 {
@@ -20,6 +21,7 @@ namespace FightSimv2
             {
                 f1.Attack();
                 f2.Hurt(f1.Attack());
+                Thread.Sleep(1000);
                 f2.Attack();
                 f1.Hurt(f2.Attack());
                 f1.GetHP();
@@ -35,7 +37,7 @@ namespace FightSimv2
             {
                 Console.WriteLine("Congratulations " + f1.name + "!");
             }
-            else
+            else if (f1.IsAlive() == false && f2.IsAlive() == false)
             {
                 Console.WriteLine("It's a tie");
             }

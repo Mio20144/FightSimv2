@@ -37,7 +37,7 @@ namespace FightSimv2
         }
         public int GetHP()
         {
-            Console.WriteLine(name + hp);
+            Console.WriteLine(name + " " + hp);
             return hp;
         }
 
