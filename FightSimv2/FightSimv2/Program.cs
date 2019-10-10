@@ -16,11 +16,30 @@ namespace FightSimv2
             f1.name = Console.ReadLine();
             Console.WriteLine("Please enter a name for Fighter B");
             f2.name = Console.ReadLine();
-
-            f1.Attack();
-            f2.Hurt(f1.Attack());
-            Console.WriteLine(f1.Attack());
-            f2.GetHP();
+            while (f1.IsAlive() == true && f2.IsAlive() == true)
+            {
+                f1.Attack();
+                f2.Hurt(f1.Attack());
+                f2.Attack();
+                f1.Hurt(f2.Attack());
+                f1.GetHP();
+                f2.GetHP();
+                Console.ReadLine();
+                Console.Clear();
+            }
+            if (f1.IsAlive() == false)
+            {
+                Console.WriteLine("Congratulations " + f2.name + "!");
+            }
+            else if (f2.IsAlive() == false)
+            {
+                Console.WriteLine("Congratulations " + f1.name + "!");
+            }
+            else
+            {
+                Console.WriteLine("It's a tie");
+            }
+            
             
 
             Console.ReadLine();

@@ -24,13 +24,20 @@ namespace FightSimv2
         {
             hp -= amount;
         }
-        /*public bool IsAlive()
+        public bool IsAlive()
         {
-
-        }*/
+            if (hp > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public int GetHP()
         {
-            Console.WriteLine(hp);
+            Console.WriteLine(name + hp);
             return hp;
         }
 
