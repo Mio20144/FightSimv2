@@ -44,7 +44,7 @@ namespace FightSimv2
             {
                 Console.WriteLine("Congratulations " + f1.name + "!");
             }
-            //om båda fighters har 0 eller mindre hp samtidigt
+            //om båda fighters har 0 eller mindre hp samtidigt.
             else if (f1.IsAlive() == false && f2.IsAlive() == false)
             {
                 Console.WriteLine("It's a tie");
