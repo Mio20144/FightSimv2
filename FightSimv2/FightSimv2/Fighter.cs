@@ -8,17 +8,57 @@ namespace FightSimv2
 {
     class Fighter
     {
-        
-        private int hp = 100;
+
+        protected int hp;
         public string name;
+        protected int minDamage;
+        protected int maxDamage;
+        protected int accuracy;
+        protected int critValue;
+        int amount = 0;
         
 
         //attack metod som slumpar amount av skada
-        public int Attack()
+        public int HeavyAttack()
         {
             Random generator = new Random();
-            int amount = generator.Next(10, 31);
-            return amount;
+            int accurate = generator.Next(0, 10);
+            if (accurate > accuracy)
+            {
+                amount = generator.Next(minDamage, maxDamage);
+                return amount;
+            }
+            else
+            {
+                return amount;
+            }
+            
+        }
+        public int QuickAttack()
+        {
+            Random generator = new Random();
+            int accurate = generator.Next(0, 10);
+            if (accurate > accuracy)
+            {
+                int critical = generator.Next(0, 10);
+                if (critical > critValue)
+                {
+                    amount = generator.Next(minDamage / 2, maxDamage / 2);
+                    amount *= 2;
+                    return amount;
+                }
+                else
+                {
+                    amount = generator.Next(minDamage / 2, maxDamage / 2);
+                    return amount;
+                }
+                
+            }
+            else
+            {
+                return amount;
+            }
+            
         }
         //drar bort amount från fighters hp
         public void Hurt(int amount)
