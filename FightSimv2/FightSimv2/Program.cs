@@ -11,19 +11,34 @@ namespace FightSimv2
     {
         static void Main(string[] args)
         {
-            //fighter A
+
             Fighter f1 = new Fighter();
-            //fighter B
             Fighter f2 = new Fighter();
-            //användaren väljer namn på båda fighters
-            Console.WriteLine("Please enter a name for Fighter A");
-            f1.name = Console.ReadLine();
-            Console.WriteLine("Please enter a name for Fighter B");
-            f2.name = Console.ReadLine();
-            //spelet körs när båda fighters har mer än 0 hp
+            Console.WriteLine("Hello. Please choose your Champion");
+            Console.WriteLine("1. Barbarian");
+            Console.WriteLine("2. Rouge");
+            Console.WriteLine("3. Knight");
+            string choice = Console.ReadLine();
+            if (choice == "1")
+            {
+                f1 = new Barbarian();
+            }
+            else if (choice == "2")
+            {
+                f1 = new Rouge();
+            }
+            else if (choice == "3")
+            {
+                f1 = new Knight();
+            }
+            Console.WriteLine("Time to find an opponent");
+
+            Random generator = new Random();
+            int enemyNumber
+
             while (f1.IsAlive() == true && f2.IsAlive() == true)
             {
-                //fighter A attackerar först
+                /*fighter A attackerar först
                 f1.Attack();
                 f2.Hurt(f1.Attack()); //Fighter B tar skada beroende på amount från f1.Attack()
                 Thread.Sleep(1000); //gör så att amount slumpas olika, annars blir amount detsamma för båda fighters
@@ -32,7 +47,7 @@ namespace FightSimv2
                 f1.GetHP(); //skriver ut hp för fighter A och B
                 f2.GetHP();
                 Console.ReadLine();
-                Console.Clear();
+                Console.Clear();*/
             }
             //om Fighter A har mindre än eller lika med 0 hp
             if (f1.IsAlive() == false)
