@@ -12,7 +12,7 @@ namespace FightSimv2
         public Knight()
         {
             hp = 100;
-            name = "Sir Miss Madelene";
+            name = "Sir Madelene";
             minDamage = 20;
             maxDamage = 26;
             accuracy = 5;

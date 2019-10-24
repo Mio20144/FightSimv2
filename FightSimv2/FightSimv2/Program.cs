@@ -33,21 +33,25 @@ namespace FightSimv2
             }
             Console.WriteLine("Time to find an opponent");
 
-            Random generator = new Random();
-            int enemyNumber
+            f2 = new Enemy();
+            Console.WriteLine("We have our fighters");
+            Console.WriteLine(f1.name + " vs " + f2.name);
+            Console.ReadLine();
 
             while (f1.IsAlive() == true && f2.IsAlive() == true)
             {
-                /*fighter A attackerar först
-                f1.Attack();
-                f2.Hurt(f1.Attack()); //Fighter B tar skada beroende på amount från f1.Attack()
+
+                //fighter A attackerar först
+                Console.Clear();
+                f1.HeavyAttack();
+                f2.Hurt(f1.HeavyAttack()); //Fighter B tar skada beroende på amount från f1.Attack()
                 Thread.Sleep(1000); //gör så att amount slumpas olika, annars blir amount detsamma för båda fighters
-                f2.Attack();
-                f1.Hurt(f2.Attack());
+                f2.HeavyAttack();
+                f1.Hurt(f2.HeavyAttack());
                 f1.GetHP(); //skriver ut hp för fighter A och B
                 f2.GetHP();
                 Console.ReadLine();
-                Console.Clear();*/
+               
             }
             //om Fighter A har mindre än eller lika med 0 hp
             if (f1.IsAlive() == false)
